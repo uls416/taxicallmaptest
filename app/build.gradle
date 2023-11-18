@@ -1,0 +1,55 @@
+//noinspection GradleCompatible
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.taxicall.taxiapptest_groovydsl'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.taxicall.taxiapptest_groovydsl"
+        minSdk 24
+        //noinspection OldTargetApi
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+apply plugin: 'com.android.application'
+dependencies {
+
+    // Aşağıdaki kütüphanelerin neredeyse hepsi osmbonuspack ile geldi kaldırmayı denemedim belki fazlalık vardır
+    implementation 'org.osmdroid:osmdroid-mapsforge:6.1.14@aar'
+    implementation 'org.mapsforge:mapsforge-map-android:0.13.0'
+    implementation 'org.mapsforge:mapsforge-map:0.13.0'
+    implementation 'org.mapsforge:mapsforge-themes:0.13.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.github.MKergall:osmbonuspack:6.9.0'
+    implementation 'org.apache.commons:commons-lang3:3.8.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'org.osmdroid:osmdroid-android:6.1.14'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
