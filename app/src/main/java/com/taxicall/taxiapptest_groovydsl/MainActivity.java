@@ -335,14 +335,14 @@ public class MainActivity extends Activity implements MapEventsReceiver, Locatio
     // Canlı Takip kodu
     void updateUIWithTrackingMode(){
         if (mTrackingMode){
-            mTrackingModeButton.setBackgroundResource(R.drawable.btn_tracking_on);
+            mTrackingModeButton.setBackgroundResource(org.osmdroid.library.R.drawable.ic_menu_mylocation);
             if (myLocationOverlay.isEnabled()&& myLocationOverlay.getLocation() != null){
                 map.getController().animateTo(myLocationOverlay.getLocation());
             }
             map.setMapOrientation(-mAzimuthAngleSpeed);
             mTrackingModeButton.setKeepScreenOn(true);
         } else {
-            mTrackingModeButton.setBackgroundResource(R.drawable.btn_tracking_off);
+            mTrackingModeButton.setBackgroundResource(org.osmdroid.library.R.drawable.ic_menu_compass);
             map.setMapOrientation(0.0f);
             mTrackingModeButton.setKeepScreenOn(false);
         }
